@@ -140,27 +140,27 @@ common_scanmap['8'.charCodeAt(0)]  = KeyNames.KEY_8;
 common_scanmap['9'.charCodeAt(0)]  = KeyNames.KEY_9;
 common_scanmap['0'.charCodeAt(0)]  = KeyNames.KEY_0;
 common_scanmap[145]                = KeyNames.KEY_ScrollLock;
-common_scanmap[103]                = KeyNames.KEY_KP_7;
-common_scanmap[104]                = KeyNames.KEY_KP_8;
-common_scanmap[105]                = KeyNames.KEY_KP_9;
-common_scanmap[100]                = KeyNames.KEY_KP_4;
-common_scanmap[101]                = KeyNames.KEY_KP_5;
-common_scanmap[102]                = KeyNames.KEY_KP_6;
+//common_scanmap[103]                = KeyNames.KEY_KP_7;
+//common_scanmap[104]                = KeyNames.KEY_KP_8;
+//common_scanmap[105]                = KeyNames.KEY_KP_9;
+//common_scanmap[100]                = KeyNames.KEY_KP_4;
+//common_scanmap[101]                = KeyNames.KEY_KP_5;
+//common_scanmap[102]                = KeyNames.KEY_KP_6;
 common_scanmap[107]                = KeyNames.KEY_KP_Plus;
-common_scanmap[97]                 = KeyNames.KEY_KP_1;
-common_scanmap[98]                 = KeyNames.KEY_KP_2;
-common_scanmap[99]                 = KeyNames.KEY_KP_3;
-common_scanmap[96]                 = KeyNames.KEY_KP_0;
-common_scanmap[109]                = KeyNames.KEY_Minus;
-common_scanmap[110]                = KeyNames.KEY_KP_Decimal;
-common_scanmap[191]                = KeyNames.KEY_Slash;
+//common_scanmap[97]                 = KeyNames.KEY_KP_1;
+//common_scanmap[98]                 = KeyNames.KEY_KP_2;
+//common_scanmap[99]                 = KeyNames.KEY_KP_3;
+//common_scanmap[96]                 = KeyNames.KEY_KP_0;
+//common_scanmap[109]                = KeyNames.KEY_Minus;
+//common_scanmap[110]                = KeyNames.KEY_KP_Decimal;
+//common_scanmap[191]                = KeyNames.KEY_Slash;
 common_scanmap[190]                = KeyNames.KEY_Period;
 common_scanmap[188]                = KeyNames.KEY_Comma;
-common_scanmap[220]                = KeyNames.KEY_BSlash;
-common_scanmap[192]                = KeyNames.KEY_Tilde;
-common_scanmap[222]                = KeyNames.KEY_Quote;
-common_scanmap[219]                = KeyNames.KEY_LBrace;
-common_scanmap[221]                = KeyNames.KEY_RBrace;
+//common_scanmap[220]                = KeyNames.KEY_BSlash;
+//common_scanmap[192]                = KeyNames.KEY_Tilde;
+//common_scanmap[222]                = KeyNames.KEY_Quote;
+//common_scanmap[219]                = KeyNames.KEY_LBrace;
+//common_scanmap[221]                = KeyNames.KEY_RBrace;
 
 common_scanmap['Q'.charCodeAt(0)]  = KeyNames.KEY_Q;
 common_scanmap['W'.charCodeAt(0)]  = KeyNames.KEY_W;
@@ -189,13 +189,13 @@ common_scanmap['B'.charCodeAt(0)]  = KeyNames.KEY_B;
 common_scanmap['N'.charCodeAt(0)]  = KeyNames.KEY_N;
 common_scanmap['M'.charCodeAt(0)]  = KeyNames.KEY_M;
 common_scanmap[' '.charCodeAt(0)]  = KeyNames.KEY_Space;
-common_scanmap[13]                 = KeyNames.KEY_Enter;
+//common_scanmap[13]                 = KeyNames.KEY_Enter;
 common_scanmap[27]                 = KeyNames.KEY_Escape;
 common_scanmap[8]                  = KeyNames.KEY_BackSpace;
 common_scanmap[9]                  = KeyNames.KEY_Tab;
 common_scanmap[16]                 = KeyNames.KEY_ShiftL;
 common_scanmap[17]                 = KeyNames.KEY_LCtrl;
-common_scanmap[18]                 = KeyNames.KEY_Alt;
+//common_scanmap[18]                 = KeyNames.KEY_Alt;
 common_scanmap[20]                 = KeyNames.KEY_CapsLock;
 common_scanmap[44]                 = KeyNames.KEY_SysReqest;
 common_scanmap[144]                = KeyNames.KEY_NumLock;
@@ -223,50 +223,75 @@ common_scanmap[19]                 = 101;// Break, XSpice only
    were grey on the original AT keyboard.  These are
    prefixed, as they were on the PS/2 controller, with an
    0xE0 byte to indicate that they are extended */
-common_scanmap[111]                = 0xE0 | (KeyNames.KEY_Slash << 8);// KP_Divide
-common_scanmap[106]                = 0xE0 | (KeyNames.KEY_KP_Multiply << 8); // KP_Multiply
-common_scanmap[36]                 = 0xE0 | (KeyNames.KEY_KP_7 << 8); // Home
-common_scanmap[38]                 = 0xE0 | (KeyNames.KEY_KP_8 << 8); // Up
-common_scanmap[33]                 = 0xE0 | (KeyNames.KEY_KP_9 << 8); // PgUp
-common_scanmap[37]                 = 0xE0 | (KeyNames.KEY_KP_4 << 8); // Left
-common_scanmap[39]                 = 0xE0 | (KeyNames.KEY_KP_6 << 8); // Right
-common_scanmap[35]                 = 0xE0 | (KeyNames.KEY_KP_1 << 8); // End
-common_scanmap[40]                 = 0xE0 | (KeyNames.KEY_KP_2 << 8); // Down
-common_scanmap[34]                 = 0xE0 | (KeyNames.KEY_KP_3 << 8); // PgDown
-common_scanmap[45]                 = 0xE0 | (KeyNames.KEY_KP_0 << 8); // Insert
-common_scanmap[46]                 = 0xE0 | (KeyNames.KEY_KP_Decimal << 8); // Delete
+//common_scanmap[111]                = 0xE0 | (KeyNames.KEY_Slash << 8);// KP_Divide
+//common_scanmap[106]                = 0xE0 | (KeyNames.KEY_KP_Multiply << 8); // KP_Multiply
+//common_scanmap[36]                 = 0xE0 | (KeyNames.KEY_KP_7 << 8); // Home
+//common_scanmap[38]                 = 0xE0 | (KeyNames.KEY_KP_8 << 8); // Up
+//common_scanmap[33]                 = 0xE0 | (KeyNames.KEY_KP_9 << 8); // PgUp
+//common_scanmap[37]                 = 0xE0 | (KeyNames.KEY_KP_4 << 8); // Left
+//common_scanmap[39]                 = 0xE0 | (KeyNames.KEY_KP_6 << 8); // Right
+//common_scanmap[35]                 = 0xE0 | (KeyNames.KEY_KP_1 << 8); // End
+//common_scanmap[40]                 = 0xE0 | (KeyNames.KEY_KP_2 << 8); // Down
+//common_scanmap[34]                 = 0xE0 | (KeyNames.KEY_KP_3 << 8); // PgDown
+//common_scanmap[45]                 = 0xE0 | (KeyNames.KEY_KP_0 << 8); // Insert
+//common_scanmap[46]                 = 0xE0 | (KeyNames.KEY_KP_Decimal << 8); // Delete
 common_scanmap[91]                 = 0xE0 | (0x5B << 8); //KeyNames.KEY_LMeta
 common_scanmap[92]                 = 0xE0 | (0x5C << 8); //KeyNames.KEY_RMeta
 common_scanmap[93]                 = 0xE0 | (0x5D << 8); //KeyNames.KEY_Menu
 
-/* Firefox/Mozilla codes */
-var firefox_scanmap = [];
-firefox_scanmap[173]                = KeyNames.KEY_Minus;
-firefox_scanmap[61]                 = KeyNames.KEY_Equal;
-firefox_scanmap[59]                 = KeyNames.KEY_SemiColon;
+// LCAC Spanish adaptation. Using event.code (codename). Old keycode is deprecated.
+var js_code = [];
+js_code['AltRight']		= KeyNames.KEY_AltGr;
+js_code['AltLeft']		= KeyNames.KEY_Alt;
+js_code['Backquote'] 		= KeyNames.KEY_Tilde;
+js_code['IntlBackslash']	= KeyNames.KEY_Less;
+js_code['Minus']		= KeyNames.KEY_Minus;
+js_code['Equal']		= KeyNames.KEY_Equal;
+js_code['BracketLeft']		= KeyNames.KEY_LBrace;
+js_code['BracketRight']		= KeyNames.KEY_RBrace;
+js_code['Semicolon']		= KeyNames.KEY_SemiColon;
+js_code['Quote']		= KeyNames.KEY_Quote;
+js_code['Backslash']		= KeyNames.KEY_BSlash;
+js_code['IntBackslash']		= KeyNames.KEY_Less;
+js_code['Slash']		= KeyNames.KEY_Slash;
+js_code['NumpadDivide']		= KeyNames.KEY_KP_Divide;
+js_code['NumpadMultiply']	= KeyNames.KEY_KP_Multiply;
+js_code['NumpadSubtract']	= KeyNames.KEY_KP_Minus;
+js_code['Enter']		= KeyNames.KEY_Enter;
+js_code['NumpadEnter']		= KeyNames.KEY_KP_Enter;
+js_code['Numpad0']		= KeyNames.KEY_KP_0;
+js_code['Numpad1']		= KeyNames.KEY_KP_1;
+js_code['Numpad2']		= KeyNames.KEY_KP_2;
+js_code['Numpad3']		= KeyNames.KEY_KP_3;
+js_code['Numpad4']		= KeyNames.KEY_KP_4;
+js_code['Numpad5']		= KeyNames.KEY_KP_5;
+js_code['Numpad6']		= KeyNames.KEY_KP_6;
+js_code['Numpad7']		= KeyNames.KEY_KP_7;
+js_code['Numpad8']		= KeyNames.KEY_KP_8;
+js_code['Numpad9']		= KeyNames.KEY_KP_9;
+js_code['NumpadDecimal']	= KeyNames.KEY_KP_Decimal;
+js_code['Insert']		= KeyNames.KEY_Insert;
+js_code['Home']			= KeyNames.KEY_Home;
+js_code['PageUp']		= KeyNames.KEY_Pgup;
+js_code['Delete']		= KeyNames.KEY_Del;
+js_code['End']			= KeyNames.KEY_End;
+js_code['PageDown']		= KeyNames.KEY_Pgdown;
+js_code['ArrowUp']		= KeyNames.KEY_Arrowup;
+js_code['ArrowDown']		= KeyNames.KEY_Arrowdown;
+js_code['ArrowLeft']		= KeyNames.KEY_Arrowleft;
+js_code['ArrowRight']		= KeyNames.KEY_Arrowright;
 
-/* DOM3 codes */
-var DOM_scanmap = [];
-DOM_scanmap[189]                = KeyNames.KEY_Minus;
-DOM_scanmap[187]                = KeyNames.KEY_Equal;
-DOM_scanmap[186]                = KeyNames.KEY_SemiColon;
-
-function get_scancode(code)
+function get_scancode(code, codename)
 {
     if (common_scanmap[code] === undefined)
-    {
-        if (navigator.userAgent.indexOf("Firefox") != -1)
-            return firefox_scanmap[code];
-        else
-            return DOM_scanmap[code];
-    }
+        return js_code[codename];
     else
         return common_scanmap[code];
 }
 
-function keycode_to_start_scan(code)
+function keycode_to_start_scan(code, codename)
 {
-    var scancode = get_scancode(code);
+    var scancode = get_scancode(code, codename);
     if (scancode === undefined)
     {
         alert('no map for ' + code);
@@ -276,9 +301,9 @@ function keycode_to_start_scan(code)
     return scancode;
 }
 
-function keycode_to_end_scan(code)
+function keycode_to_end_scan(code, codename)
 {
-    var scancode = get_scancode(code);
+    var scancode = get_scancode(code, codename);
     if (scancode === undefined)
         return 0;
 
