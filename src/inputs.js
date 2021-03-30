@@ -21,7 +21,10 @@
 import * as Messages from './spicemsg.js';
 import { Constants } from './enums.js';
 import { KeyNames } from './atKeynames.js';
-import { SpiceConn } from './spiceconn.js';
+import {
+  SpiceConn,
+  lcSetLastEvent,
+ } from './spiceconn.js';
 import { DEBUG } from './utils.js';
 
 /*----------------------------------------------------------------------------
@@ -80,6 +83,7 @@ SpiceInputsConn.prototype.process_channel_message = function(msg)
 
 function handle_mousemove(e)
 {
+    lcSetLastEvent();
     var msg = new Messages.SpiceMiniData();
     var move;
     if (this.sc.mouse_mode == Constants.SPICE_MOUSE_MODE_CLIENT)
@@ -117,6 +121,7 @@ function handle_mousemove(e)
 
 function handle_mousedown(e)
 {
+    lcSetLastEvent();
     var press = new Messages.SpiceMsgcMousePress(this.sc, e)
     var msg = new Messages.SpiceMiniData();
     msg.build_msg(Constants.SPICE_MSGC_INPUTS_MOUSE_PRESS, press);
@@ -128,12 +133,14 @@ function handle_mousedown(e)
 
 function handle_contextmenu(e)
 {
+    lcSetLastEvent();
     e.preventDefault();
     return false;
 }
 
 function handle_mouseup(e)
 {
+    lcSetLastEvent();
     var release = new Messages.SpiceMsgcMouseRelease(this.sc, e)
     var msg = new Messages.SpiceMiniData();
     msg.build_msg(Constants.SPICE_MSGC_INPUTS_MOUSE_RELEASE, release);
@@ -145,6 +152,7 @@ function handle_mouseup(e)
 
 function handle_mousewheel(e)
 {
+    lcSetLastEvent();
     var press = new Messages.SpiceMsgcMousePress;
     var release = new Messages.SpiceMsgcMouseRelease;
     if (e.deltaY < 0)
@@ -168,6 +176,7 @@ function handle_mousewheel(e)
 
 function handle_keydown(e)
 {
+    lcSetLastEvent();
     var key = new Messages.SpiceMsgcKeyDown(e)
     var msg = new Messages.SpiceMiniData();
     check_and_update_modifiers(e, key.code, this.sc);
@@ -180,6 +189,7 @@ function handle_keydown(e)
 
 function handle_keyup(e)
 {
+    lcSetLastEvent();
     var key = new Messages.SpiceMsgcKeyUp(e)
     var msg = new Messages.SpiceMiniData();
     check_and_update_modifiers(e, key.code, this.sc);

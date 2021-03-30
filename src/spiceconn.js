@@ -42,8 +42,17 @@ import {
   SpiceMsgNotify,
 } from './spicemsg.js';
 import { DEBUG } from './utils.js';
+import { hexdump_buffer } from './utils.js';
 import * as Webm from './webm.js';
 import { rsa_encrypt } from './ticket.js';
+
+/* LCAC: Intactivity control */
+var lclastevent = new Date();
+
+function lcSetLastEvent()
+{
+    lclastevent = new Date();
+}
 
 function SpiceConn(o)
 {
@@ -116,7 +125,17 @@ function SpiceConn(o)
             else if (this.parent.state == "ticket")
                 e = new Error("Bad password.");
             else
+	    {
                 e = new Error("Unexpected close while " + this.parent.state);
+
+                if ( Constants.LC_INACTIVITY_TIMEOUT > 0 )
+                {
+                    if (Constants.LC_INACTIVITY_ACTION == 0) 
+                        location.reload();
+                    else
+                        window.close();
+                }
+            }
 
             this.parent.onerror(e);
             this.parent.log_err(e.toString());
@@ -199,9 +218,21 @@ SpiceConn.prototype =
         var mb = new ArrayBuffer(msg.buffer_size());
         msg.to_buffer(mb);
         this.messages_sent++;
+
+        /* Check inactivity */
+        var lctime = new Date();
+        if ( Constants.LC_INACTIVITY_TIMEOUT > 0 && (lctime - lclastevent) > Constants.LC_INACTIVITY_TIMEOUT )
+        {
+            console.log("Activity timeout: ", lctime, " ", lclastevent );
+                if (Constants.LC_INACTIVITY_ACTION == 0) 
+                    location.reload();
+                else
+                    window.close();
+        }
+
         DEBUG > 0 && console.log(">> hdr " + this.channel_type() + " type " + msg.type + " size " + mb.byteLength);
         DEBUG > 2 && hexdump_buffer(mb);
-        this.ws.send(mb);
+	this.ws.send(mb);
     },
 
     process_inbound: function(mb, saved_header)
@@ -523,4 +554,5 @@ function spiceconn_timeout(sc)
 
 export {
   SpiceConn,
+  lcSetLastEvent,
 };

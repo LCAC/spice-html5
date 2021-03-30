@@ -369,4 +369,7 @@ export var Constants = {
   VD_AGENT_FILE_XFER_STATUS_CANCELLED     : 1,
   VD_AGENT_FILE_XFER_STATUS_ERROR         : 2,
   VD_AGENT_FILE_XFER_STATUS_SUCCESS       : 3,
+
+  LC_INACTIVITY_TIMEOUT     : 900000,  // 0: No check inactivity
+  LC_INACTIVITY_ACTION      : 0,       // 0: reload - 1: close tab
 };
