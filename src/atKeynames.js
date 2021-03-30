@@ -182,6 +182,20 @@ var KeyNames = {
 
   KEY_Prefix0     :/* special               0x60  */   96,
   KEY_Prefix1     :/* specail               0x61  */   97,
+
+  KEY_AltGr       :/* AltGr               0x38e0  */   0x38e0,
+  KEY_KP_Divide   :/* / (divide)          0x35e0  */   0x35e0,
+  KEY_KP_Enter    :/* / (enter)           0x1ce0  */   0x1ce0,
+  KEY_Insert      :/* / (insert)          0x52e0  */   0x52e0,
+  KEY_Home        :/* / (home)            0x47e0  */   0x47e0,
+  KEY_Pgup        :/* / (pgup)            0x49e0  */   0x49e0,
+  KEY_Del         :/* / (del)             0x53e0  */   0x53e0,
+  KEY_End         :/* / (end)             0x4fe0  */   0x4fe0,
+  KEY_Pgdown      :/* / (pgdown)          0x51e0  */   0x51e0,
+  KEY_Arrowup     :/* / (arrowup)         0x48e0  */   0x48e0,
+  KEY_Arrowdown   :/* / (arrowdown)       0x50e0  */   0x50e0,
+  KEY_Arrowleft   :/* / (arrowleft)       0x4be0  */   0x4be0,
+  KEY_Arrowright  :/* / (arrowright)      0x4de0  */   0x4de0,
 };
 
 export {
